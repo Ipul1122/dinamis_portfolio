@@ -10,17 +10,17 @@ class ScientExperienceController extends Controller
 {
     public function index()
     {
-        $scient = ScientExperience::latest()->get();
+        $scients = ScientExperience::latest()->get();
 
-        return view('admin.pages.experience.scient.index' , compact('scient'));
+        return view('admin.pages.experience.scient.index' , compact('scients'));
     }
 
     public function userScient()
     {
 
-        $scient = ScientExperience::latest()->paginate(5);
+        $scients = ScientExperience::latest()->paginate(5);
 
-        return view('user.pages.experience.scient', compact('scient'));
+        return view('user.pages.experience.scient', compact('scients'));
     }
 
     public function create()
@@ -42,14 +42,14 @@ class ScientExperienceController extends Controller
             'paragraph' => $request->paragraph,
         ]);
 
-        return redirect()->route('admin.pages.experience.scient.index')-with('success', 'Scient experience created successfully.');
+        return redirect()->route('admin.experience.scient.index')->with('success', 'Scient experience created successfully.');
     }
 
     public function edit($id)
     {
-        $scient = ScientExperience::findOrFail($id);
+        $scients = ScientExperience::findOrFail($id);
 
-        return view('admin.pages.experience.scient.edit', compact('scient'));
+        return view('admin.pages.experience.scient.edit', compact('scients'));
     }
 
     public function update(Request $request, $id)
@@ -60,21 +60,21 @@ class ScientExperienceController extends Controller
             'paragraph' => 'required|string',
         ]);
 
-        $scient = ScientExperience::findOrFail($id);
-        $scient->update([
+        $scients = ScientExperience::findOrFail($id);
+        $scients->update([
             'year' => $request->year,
             'title' => $request->title,
             'paragraph' => $request->paragraph,
         ]);
 
-        return redirect()->route('admin.pages.experience.scient.index')->with('success', 'Scient experience updated successfully.');
+        return redirect()->route('admin.experience.scient.index')->with('success', 'Scient experience updated successfully.');
     }
     public function destroy($id)
     {
-        $scient = ScientExperience::findOrFail($id);
-        $scient->delete();
+        $scients = ScientExperience::findOrFail($id);
+        $scients->delete();
 
-        return redirect()->route('admin.pages.experience.scient.index')->with('success', 'Scient experience deleted successfully.');
+        return redirect()->route('admin.experience.scient.index')->with('success', 'Scient experience deleted successfully.');
 
     }   
 }

@@ -60,7 +60,7 @@ Route::prefix('admin/experience/work')->name('admin.experience.work.')->group(fu
 // SCIENT EXPERIENCE
 Route::prefix('admin/experience/scient')->name('admin.experience.scient.')->group(function () {
     Route::get('/', [ScientExperienceController::class, 'index'])->name('index');
-    Route::get('/create', action: [ScientExperienceController::class, 'create'])->name('create');
+    Route::get('/create', [ScientExperienceController::class, 'create'])->name('create');
     Route::post('/store', [ScientExperienceController::class, 'store'])->name('store');
     Route::get('/edit/{id}', [ScientExperienceController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [ScientExperienceController::class, 'update'])->name('update');
