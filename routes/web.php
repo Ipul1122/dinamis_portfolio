@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeUserController;
 use App\Http\Controllers\User\AboutController as UserAboutController;
 use App\Http\Controllers\User\SkillUserController;
-use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\User\ContactUserController;
 
 // Admin
 use App\Http\Controllers\Admin\HomeAdminController;
@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\WorkExperienceController;
 use App\Http\Controllers\Admin\ScientExperienceController;
 use App\Http\Controllers\Admin\SkillAdminController;
+use App\Http\Controllers\Admin\ContactAdminController;
 
 
 // Route::get('/', function () {
@@ -25,6 +26,9 @@ Route::get('/about', [UserAboutController::class, 'index'])->name('about');
 Route::get('/experience/work', [WorkExperienceController::class, 'userWork'])->name('user.experience.work');
 Route::get('/experience/scient', [ScientExperienceController::class, 'userScient'])->name('user.experience.scient');
 Route::get('/skills', [SkillUserController::class, 'showSkills'])->name('user.skills');
+Route::get('/contact', [ContactUserController::class, 'index'])->name('user.contact');
+Route::post('/contact', [ContactUserController::class, 'store'])->name('user.contact.store');
+
 
 
 
@@ -72,6 +76,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::delete('/skills/{id}', [SkillAdminController::class, 'destroy'])->name('skills.destroy');
 
     // CONTACT
+    Route::get('/contact', [ContactAdminController::class, 'index'])->name('contact.index');
 });
-
-

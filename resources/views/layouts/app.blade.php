@@ -24,11 +24,13 @@
     </main>
 
     {{-- Footer --}}
-    <footer class="bg-white border-t mt-12">
-        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
-            &copy; {{ date('Y') }} Dinamis Portfolio. All rights reserved.
-        </div>
-    </footer>
+    @include('layouts.footer')
+
+    {{-- Optional: Tambahkan script tambahan jika diperlukan --}}
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
