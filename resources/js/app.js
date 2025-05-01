@@ -1,5 +1,5 @@
 import './bootstrap';
 import 'flowbite';
-import { createIcons } from 'lucide';
-createIcons();
+import { createIcons, icons } from 'lucide';
+createIcons({icons});
 

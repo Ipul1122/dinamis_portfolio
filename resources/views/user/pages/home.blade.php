@@ -7,7 +7,7 @@
             <!-- KIRI -->
             <div class="space-y-4">
                 <h1 class="text-4xl font-bold text-gray-800">{{ $home->nama }}</h1>
-                <h2 class="text-xl text-yellow-600 font-semibold">{{ $home->jurusan }}</h2>
+                <h2 class="text-xl text-blue-600 font-semibold">{{ $home->jurusan }}</h2>
 
                 <!-- Paragraf dengan tombol Read More / Less -->
                 <div class="text-gray-700 text-justify">
@@ -22,7 +22,7 @@
                 </div>
 
                 <!-- Tombol Tentang Saya -->
-                <a href="{{ url('/about') }}" class="inline-block mt-4 px-5 py-2 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition duration-300">
+                <a href="{{ url('/about') }}" class="inline-block mt-4 px-5 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition duration-300">
                     Tentang Saya
                 </a>
             </div>

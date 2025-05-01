@@ -13,7 +13,8 @@ use App\Http\Controllers\Admin\WorkExperienceController;
 use App\Http\Controllers\Admin\ScientExperienceController;
 use App\Http\Controllers\Admin\SkillAdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
-
+use App\Http\Controllers\Admin\DashboardAdminController;
+use Whoops\Run;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -21,8 +22,9 @@ use App\Http\Controllers\Admin\ContactAdminController;
 
 
 // USER
-Route::get('/', [HomeUserController::class, 'index'])->name('home');
-Route::get('/about', [UserAboutController::class, 'index'])->name('about');
+Route::get('/', function(){ return view('user.dashboard');})->name('user.dashboard');
+Route::get('/home', [HomeUserController::class, 'index'])->name('user.home');
+Route::get('/about', [UserAboutController::class, 'index'])->name('user.about');
 Route::get('/experience/work', [WorkExperienceController::class, 'userWork'])->name('user.experience.work');
 Route::get('/experience/scient', [ScientExperienceController::class, 'userScient'])->name('user.experience.scient');
 Route::get('/skills', [SkillUserController::class, 'showSkills'])->name('user.skills');
@@ -38,6 +40,10 @@ ADMIN ROUTE
 ========================================================= */
 // Admin Route
 Route::prefix('admin')->name('admin.')->group(function () {
+    
+    // DASHBOARD
+    Route::get('/', [DashboardAdminController::class, 'index'])->name('dashboard');
+
     // Home Admin
     Route::get('/home', [HomeAdminController::class, 'index'])->name('home.index');
     Route::get('/home/edit', [HomeAdminController::class, 'edit'])->name('home.edit');

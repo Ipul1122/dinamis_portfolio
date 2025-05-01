@@ -13,7 +13,7 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-white md:dark:bg-white dark:border-white">
                 <li>
-                    <a href="/home" id="nav-home" class="nav-link block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0
+                    <a href="/admin/home" id="nav-home" class="nav-link block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0
                     text-gray-900
                     md:hover:text-blue-700 md:p-0 
                     dark:text-gray-700 
@@ -24,7 +24,7 @@
                     aria-current="page">Home</a>
                 </li>
                 <li>
-                    <a href="/about" id="nav-about" class="nav-link block py-2 px-3 
+                    <a href="/admin/about" id="nav-about" class="nav-link block py-2 px-3 
                     text-gray-900 rounded-sm 
                     hover:bg-gray-100 
                     md:hover:bg-transparent 
@@ -40,18 +40,18 @@
                     </svg></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownNavbar" class="z-10 hidden font-normal bg-blue-800 divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-500 dark:divide-gray-600">
-                        <ul class="py-2 text-sm text-white dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        <ul class="py-2 text-sm text-gray-800 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                             <li>
-                                <a href="/experience/work" id="nav-work" class="dropdown-link block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Work</a>
+                                <a href="/admin/experience/work" id="nav-work" class="dropdown-link block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Work</a>
                             </li>
                             <li>
-                                <a href="/experience/scient" id="nav-scient" class="dropdown-link block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Scients</a>
+                                <a href="/admin/experience/scient" id="nav-scient" class="dropdown-link block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Scients</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="/skills" id="nav-skills" class="nav-link block py-2 px-3 
+                    <a href="/admin/skills" id="nav-skills" class="nav-link block py-2 px-3 
                     text-gray-800 rounded-sm 
                     hover:bg-gray-100 md:hover:bg-transparent 
                     md:border-0 md:hover:text-blue-700 md:p-0 
@@ -60,7 +60,7 @@
                     md:dark:hover:bg-transparent">Skill</a>
                 </li>
                 <li>
-                    <a href="/contact" id="nav-contact" class="nav-link block py-2 px-3 
+                    <a href="/admin/contact" id="nav-contact" class="nav-link block py-2 px-3 
                     text-gray-800 rounded-sm 
                     hover:bg-gray-100 md:hover:bg-transparent 
                     md:border-0 md:hover:text-blue-700 md:p-0 
