@@ -53,3 +53,16 @@ Halo disini saya menyediakan portfolio dinamis menggunakan laravel 12, dimana me
 - running server laravel `php artisan serve` website ditampilkan `http://localhost:8000` anda
 - login halaman user `http://localhost:8000`
 - login halaman admin `http://localhost:8000/admin`
+
+## Dependecy
+`"@tailwindcss/vite": "^4.1.4",`
+`"autoprefixer": "^10.4.21",`
+`"axios": "^1.8.2",`
+`"concurrently": "^9.0.1",`
+`"laravel-vite-plugin": "^1.2.0",`
+`"postcss": "^8.5.3",`
+`"tailwindcss": "^3.4.17",`
+`"vite": "^6.2.4"`
+`"flowbite": "^3.1.2",`
+`"flowbite-icons": "^1.5.0",`
+`"lucide": "^0.503.0"`
