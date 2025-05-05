@@ -54,6 +54,10 @@ Halo disini saya menyediakan portfolio dinamis menggunakan laravel 12, dimana me
 - login halaman user `http://localhost:8000`
 - login halaman admin `http://localhost:8000/admin`
 
+## Video Panduan
+ - User : https://drive.google.com/file/d/1nMSULGlydpPW0uUdaLCICMegaWByATs1/view?usp=sharing
+ - Admin : https://drive.google.com/file/d/10YJZ0H-xfFHcchGZaqmcfjclahiu7awm/view?usp=sharing
+
 ## Dependecy
 `"@tailwindcss/vite": "^4.1.4",`
 `"autoprefixer": "^10.4.21",`
