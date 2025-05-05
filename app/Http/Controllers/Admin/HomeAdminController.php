@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Home;
+use Illuminate\Support\Facades\Storage;
 
 class HomeAdminController extends Controller
 {
@@ -21,6 +22,11 @@ class HomeAdminController extends Controller
         $data = $request->only(['nama', 'jurusan', 'paragraph']);
 
         if ($request->hasFile('image')) {
+            // Delete the old image if it exists
+            if ($home->image && Storage::disk('public')->exists($home->image)) {
+                Storage::disk('public')->delete($home->image);
+            }
+
             $imagePath = $request->file('image')->store('images', 'public');
             $data['image'] = $imagePath;
         }

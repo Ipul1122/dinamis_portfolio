@@ -21,23 +21,21 @@ class AboutController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi inputan
         $request->validate([
-            'year' => 'required',
-            'institution' => 'required',
-            'major' => 'required',
+            'year' => 'required|integer',
+            'institution' => 'required|string',
+            'major' => 'required|string', // WAJIB ADA
         ]);
     
-        // Menyimpan data ke database
         Education::create([
             'year' => $request->year,
             'institution' => $request->institution,
-            'major' => $request->major,
+            'major' => $request->major, // WAJIB ADA
         ]);
     
-        // Mengarahkan kembali dengan pesan sukses
-        return redirect()->route('admin.about.index')->with('success', 'Data pendidikan berhasil ditambahkan.');
+        return redirect()->route('admin.about.index')->with('success', 'Data berhasil disimpan.');
     }
+    
     
 
     public function edit($id)

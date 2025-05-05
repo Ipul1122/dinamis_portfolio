@@ -122,6 +122,14 @@
             previewImage.src = URL.createObjectURL(files[0]);
         }
     });
+
+    // Handle file input change event
+    imageInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file && file.type.startsWith('image/')) {
+            previewImage.src = URL.createObjectURL(file);
+        }
+    });
 </script>
 
 @endsection

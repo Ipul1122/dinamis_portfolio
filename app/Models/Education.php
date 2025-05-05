@@ -13,5 +13,5 @@ class Education extends Model
     // protected $table = 'educations';
 
     // Specify fillable fields for mass assignment
-    protected $fillable = ['year', 'degree', 'institution', 'description'];
+    protected $fillable = ['year', 'institution', 'major'];
 }

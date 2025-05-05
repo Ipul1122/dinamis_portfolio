@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('year');
             $table->string('work_at');
             $table->string('as');
-            $table->text('paragraph');
+            $table->text('paragraph')->nullable();
             $table->json('list');
             $table->timestamps();
         });

@@ -29,28 +29,27 @@ class WorkExperienceController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'year' => 'required|string|max:255',
-        'work_at' => 'required|string|max:255',
-        'as' => 'required|string|max:255',
-        'paragraph' => 'required|string',
-        'list' => 'nullable|array',
-    ]);
+    {
+        $request->validate([
+            'year' => 'required|string|max:255',
+            'work_at' => 'required|string|max:255',
+            'as' => 'required|string|max:255',
+            'paragraph' => 'nullable|string',
+            'list' => 'nullable|array',
+        ]);
 
-    $encodedList = $request->list !== null ? json_encode($request->list) : json_encode([]);
+        $encodedList = $request->list !== null ? json_encode($request->list) : json_encode([]);
 
-    WorkExperience::create([
-        'year' => $request->year,
-        'work_at' => $request->work_at,
-        'as' => $request->as,
-        'paragraph' => $request->paragraph,
-        'list' => $encodedList,
-    ]);
+        WorkExperience::create([
+            'year' => $request->year,
+            'work_at' => $request->work_at,
+            'as' => $request->as,
+            'paragraph' => $request->paragraph ?? null,
+            'list' => $encodedList,
+        ]);
 
-    return redirect()->route('admin.experience.work.index')->with('success', 'Work experience created successfully.');
-}
-
+        return redirect()->route('admin.experience.work.index')->with('success', 'Work experience created successfully.');
+    }
 
     public function edit($id)
     {
@@ -59,31 +58,30 @@ class WorkExperienceController extends Controller
     }
 
     public function update(Request $request, $id)
-{
-    $request->validate([
-        'year' => 'required|string|max:255',
-        'work_at' => 'required|string|max:255',
-        'as' => 'required|string|max:255',
-        'paragraph' => 'required|string',
-        'list' => 'nullable|array',
-    ]);
+    {
+        $request->validate([
+            'year' => 'required|string|max:255',
+            'work_at' => 'required|string|max:255',
+            'as' => 'required|string|max:255',
+            'paragraph' => 'nullable|string',
+            'list' => 'nullable|array',
+        ]);
 
-    $workExperience = WorkExperience::findOrFail($id);
+        $workExperience = WorkExperience::findOrFail($id);
 
-    // Cek list, kalau null, ubah ke array kosong '[]'
-    $encodedList = $request->list !== null ? json_encode($request->list) : json_encode([]);
+        // Cek list, kalau null, ubah ke array kosong '[]'
+        $encodedList = $request->list !== null ? json_encode($request->list) : json_encode([]);
 
-    $workExperience->update([
-        'year' => $request->year,
-        'work_at' => $request->work_at,
-        'as' => $request->as,
-        'paragraph' => $request->paragraph,
-        'list' => $encodedList,
-    ]);
+        $workExperience->update([
+            'year' => $request->year,
+            'work_at' => $request->work_at,
+            'as' => $request->as,
+            'paragraph' => $request->paragraph ?? null,
+            'list' => $encodedList,
+        ]);
 
-    return redirect()->route('admin.experience.work.index')->with('success', 'Work experience updated successfully.');
-}
-
+        return redirect()->route('admin.experience.work.index')->with('success', 'Work experience updated successfully.');
+    }
 
     public function destroy($id)
     {
